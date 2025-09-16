@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VDWEST Welding</title>
+  <title>West Welding</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
@@ -135,17 +135,38 @@
       text-decoration: none;
     }
 
+    /* Mobile tweaks */
     @media(max-width: 600px) {
+      body { background-position: center top; }
       header h1 { font-size: 2rem; }
       header p { font-size: 1rem; }
       .cta-btn { font-size: 16px; padding: 12px 24px; }
+    }
+
+    /* WhatsApp button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      text-decoration: none;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>VDWEST Welding</h1>
+    <h1>West Welding</h1>
     <p>Reliable Welding • Steel Fabrication • Professional Services</p>
     <a href="#inquiry" class="cta-btn">Request a Service</a>
   </header>
@@ -171,6 +192,7 @@
         <input type="hidden" name="_subject" value="New Welding Inquiry">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://vdwestwelding.github.io/thankyou.html">
 
         <label for="name">Name & Surname</label>
         <input id="name" type="text" name="Name & Surname" required>
@@ -188,8 +210,11 @@
 
   <footer>
     <p>📞 Cell: <a href="tel:+27718598823">071 859 8823</a> | ✉️ Email: <a href="mailto:gabriel.vdwest@gmail.com">gabriel.vdwest@gmail.com</a></p>
-    <p>&copy; 2025 VDWEST Welding. All Rights Reserved.</p>
+    <p>&copy; 2025 West Welding. All Rights Reserved.</p>
   </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/27718598823" class="whatsapp-float" target="_blank">💬</a>
 
 </body>
 </html>
