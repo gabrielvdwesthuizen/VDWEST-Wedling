@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Van Der Westhuizen Welding & Fabrications</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1581091870680-9d06a85d1c17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .container {
+      background: rgba(20, 20, 20, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    h1 {
+      text-align: center;
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    form button {
+      width: 100%;
+      padding: 12px;
+      background: #800080;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #5a005a;
+    }
+    .note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Van Der Westhuizen Welding & Fabrications Services</h1>
+      
+      <p><strong>Non refundable call out fees:</strong><br>
+      Standard call out fee: R820,00<br>
+      Emergency/After hours: R1720,00</p>
+
+      <p><em>All fees to be paid upfront & reflecting in business account before any work can commence. If work cannot be done on call out, a quotation will be provided & if accepted, the call out fee will be discounted from the invoice.</em></p>
+
+      <p><strong>Basic Welding lessons start from R532 per hour.</strong></p>
+
+      <form action="https://formsubmit.co/gabriel.vdwest@gmail.com" method="POST">
+        <!-- FormSubmit hidden fields -->
+        <input type="hidden" name="_subject" value="New Welding Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <input type="text" name="Name & Surname" placeholder="Name & Surname" required>
+        <textarea name="Inquiry" rows="4" placeholder="Your Inquiry" required></textarea>
+        <input type="tel" name="Cell Phone Number" placeholder="Cell Phone Number" required>
+        <button type="submit">Submit Inquiry</button>
+      </form>
+
+      <p class="note">We’ll get back to you as soon as possible.</p>
+    </div>
+  </div>
+</body>
+</html>
