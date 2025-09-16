@@ -5,75 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Van Der Westhuizen Welding & Fabrications</title>
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       color: #fff;
+      background: #111;
+    }
+    header {
       background: url('https://images.unsplash.com/photo-1504366265056-5a4e2c59ff52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      min-height: 100vh;
+      min-height: 60vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-    }
-
-    /* Overlay for darkening background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: -1;
-    }
-
-    header {
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 40px 20px;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
     }
     header h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #FFD700;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
     header p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #ddd;
     }
-
-    .form-section {
-      display: flex;
-      justify-content: center;
+    section {
+      max-width: 900px;
+      margin: 40px auto;
       padding: 20px;
     }
-
-    .form-container {
-      background: rgba(20, 20, 20, 0.9);
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 480px;
-      width: 100%;
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-      backdrop-filter: blur(6px);
+    .card {
+      background: #1c1c1c;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 20px rgba(255,215,0,0.15);
     }
-
-    .form-container h2 {
-      text-align: center;
+    .card h2 {
       color: #FFD700;
-      margin-bottom: 20px;
-      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
     }
-
-    .form-container p {
-      font-size: 14px;
-      margin-bottom: 15px;
-      line-height: 1.5;
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
       color: #ccc;
     }
-
     form input, form textarea {
       width: 100%;
       padding: 12px;
@@ -82,7 +73,6 @@
       border-radius: 6px;
       font-size: 15px;
     }
-
     form button {
       width: 100%;
       padding: 14px;
@@ -98,11 +88,10 @@
     form button:hover {
       background: linear-gradient(135deg, #a020a0, #800080);
     }
-
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(0,0,0,0.85);
+      background: #000;
       font-size: 14px;
       color: #aaa;
     }
@@ -119,21 +108,24 @@
     <p>Reliable Welding • Steel Fabrication • Professional Services</p>
   </header>
 
-  <section class="form-section">
-    <div class="form-container">
+  <section>
+    <div class="card">
+      <h2>Service Fees</h2>
+      <p><strong>Minimum Service Fee: R820</strong><br>
+      Every project or call-out begins at this base fee. This covers assessment and initial work, and is non-refundable.</p>
+      <p><strong>Standard Call-Out:</strong> R820<br>
+      <strong>Emergency / After Hours:</strong> R1720</p>
+      <p><em>If work cannot be completed on call-out, a quotation will be provided. If accepted, the call-out fee will be discounted from the final invoice.</em></p>
+    </div>
+
+    <div class="card">
+      <h2>Welding Lessons</h2>
+      <p>Basic welding lessons start from <strong>R532 per hour</strong>. Perfect for beginners or those looking to sharpen their skills.</p>
+    </div>
+
+    <div class="card">
       <h2>Request a Service</h2>
-
-      <p><strong>Non refundable call out fees:</strong><br>
-      Standard call out fee: R820,00<br>
-      Emergency/After hours: R1720,00</p>
-
-      <p><em>All fees must be paid upfront & reflect in our business account before any work can commence.<br>
-      If work cannot be completed on call out, a quotation will be provided. If accepted, the call out fee will be discounted from the invoice.</em></p>
-
-      <p><strong>Basic Welding lessons start from R532 per hour.</strong></p>
-
       <form action="https://formsubmit.co/gabriel.vdwest@gmail.com" method="POST">
-        <!-- FormSubmit hidden fields -->
         <input type="hidden" name="_subject" value="New Welding Inquiry">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
