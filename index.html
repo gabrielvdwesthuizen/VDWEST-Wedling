@@ -5,66 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Van Der Westhuizen Welding & Fabrications</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       color: #fff;
       background: #111;
     }
+
+    /* Video background */
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* Overlay to darken video */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.65);
+      z-index: -1;
+    }
+
     header {
-      background: url('https://images.unsplash.com/photo-1504366265056-5a4e2c59ff52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      min-height: 60vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 40px 20px;
-      position: relative;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-    }
-    header h1, header p {
-      position: relative;
-      z-index: 1;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #FFD700;
       margin-bottom: 15px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
     }
     header p {
       font-size: 1.2rem;
       color: #ddd;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
     }
+    .cta-btn {
+      padding: 16px 30px;
+      background: linear-gradient(135deg, #800080, #5a005a);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(135deg, #a020a0, #800080);
+      transform: translateY(-2px);
+    }
+
     section {
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
     }
     .card {
-      background: #1c1c1c;
+      background: rgba(20,20,20,0.9);
       padding: 25px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 25px;
-      box-shadow: 0 0 20px rgba(255,215,0,0.15);
+      box-shadow: 0 0 25px rgba(255,215,0,0.15);
     }
     .card h2 {
       color: #FFD700;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
     }
     .card p {
       font-size: 15px;
       line-height: 1.6;
       color: #ccc;
     }
+
     form input, form textarea {
       width: 100%;
       padding: 12px;
@@ -88,10 +116,11 @@
     form button:hover {
       background: linear-gradient(135deg, #a020a0, #800080);
     }
+
     footer {
       text-align: center;
       padding: 20px;
-      background: #000;
+      background: rgba(0,0,0,0.9);
       font-size: 14px;
       color: #aaa;
     }
@@ -99,13 +128,26 @@
       color: #FFD700;
       text-decoration: none;
     }
+
+    @media(max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      .cta-btn { font-size: 16px; padding: 12px 24px; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Welding video background -->
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="https://cdn.coverr.co/videos/coverr-welding-4965/1080p.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+
   <header>
     <h1>Van Der Westhuizen Welding & Fabrications</h1>
     <p>Reliable Welding • Steel Fabrication • Professional Services</p>
+    <a href="#inquiry" class="cta-btn">Request a Service</a>
   </header>
 
   <section>
@@ -123,7 +165,7 @@
       <p>Basic welding lessons start from <strong>R532 per hour</strong>. Perfect for beginners or those looking to sharpen their skills.</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="inquiry">
       <h2>Request a Service</h2>
       <form action="https://formsubmit.co/gabriel.vdwest@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New Welding Inquiry">
