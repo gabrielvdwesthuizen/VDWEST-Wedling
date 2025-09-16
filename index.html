@@ -90,10 +90,17 @@
       color: #ccc;
     }
 
+    form label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      font-weight: bold;
+      color: #FFD700;
+    }
     form input, form textarea {
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
+      margin-bottom: 10px;
       border: none;
       border-radius: 6px;
       font-size: 15px;
@@ -165,9 +172,15 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
-        <input type="text" name="Name & Surname" required>
-        <textarea name="Inquiry" rows="4" required></textarea>
-        <input type="tel" name="Cell Phone Number" required>
+        <label for="name">Name & Surname</label>
+        <input id="name" type="text" name="Name & Surname" required>
+
+        <label for="inquiry">Inquiry</label>
+        <textarea id="inquiry" name="Inquiry" rows="4" required></textarea>
+
+        <label for="phone">Cell Phone Number</label>
+        <input id="phone" type="tel" name="Cell Phone Number" required>
+
         <button type="submit">Submit Inquiry</button>
       </form>
     </div>
