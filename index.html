@@ -3,31 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VDWest Welding & Fabrications</title>
+  <title>Van Der Westhuizen Welding & Fabrications</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       color: #fff;
-      background: #111;
+      background: url('background.jpg') no-repeat center center/cover;
+      min-height: 100vh;
     }
 
-    /* Video background */
-    .video-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    /* Overlay to darken video */
-    .overlay {
+    /* Overlay */
+    body::before {
+      content: "";
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       background: rgba(0,0,0,0.65);
-      z-index: -1;
+      z-index: 0;
     }
 
     header {
@@ -38,6 +31,8 @@
       align-items: center;
       text-align: center;
       padding: 40px 20px;
+      position: relative;
+      z-index: 1;
     }
     header h1 {
       font-size: 2.8rem;
@@ -74,6 +69,8 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
+      position: relative;
+      z-index: 1;
     }
     .card {
       background: rgba(20,20,20,0.9);
@@ -123,6 +120,8 @@
       background: rgba(0,0,0,0.9);
       font-size: 14px;
       color: #aaa;
+      position: relative;
+      z-index: 1;
     }
     footer a {
       color: #FFD700;
@@ -138,14 +137,8 @@
 </head>
 <body>
 
-  <!-- Welding video background (hosted, reliable source) -->
-  <video autoplay muted loop playsinline class="video-bg">
-    <source src="https://player.vimeo.com/external/438609024.sd.mp4?s=9e559bea0f2b7d31f1c8135b1e5185c0d1a4b839&profile_id=165" type="video/mp4">
-  </video>
-  <div class="overlay"></div>
-
   <header>
-    <h1>VDWest Welding & Fabrications</h1>
+    <h1>Van Der Westhuizen Welding & Fabrications</h1>
     <p>Reliable Welding • Steel Fabrication • Professional Services</p>
     <a href="#inquiry" class="cta-btn">Request a Service</a>
   </header>
@@ -182,7 +175,7 @@
 
   <footer>
     <p>📞 Cell: <a href="tel:+27718598823">071 859 8823</a> | ✉️ Email: <a href="mailto:gabriel.vdwest@gmail.com">gabriel.vdwest@gmail.com</a></p>
-    <p>&copy; 2025 VDWest Welding & Fabrications. All Rights Reserved.</p>
+    <p>&copy; 2025 Van Der Westhuizen Welding & Fabrications. All Rights Reserved.</p>
   </footer>
 
 </body>
